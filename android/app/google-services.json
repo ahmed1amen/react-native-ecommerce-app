@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "272520955164",
+    "project_id": "kenzie-b66f0",
+    "storage_bucket": "kenzie-b66f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272520955164:android:df3089fdba0e30ebae66d9",
+        "android_client_info": {
+          "package_name": "com.kenziekids.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272520955164-1l9agu08imb8iisova65fm5pfavg3p3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2f8bvMWVW5nZSpIoEagkk0g5B1FZHHUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272520955164-1l9agu08imb8iisova65fm5pfavg3p3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
