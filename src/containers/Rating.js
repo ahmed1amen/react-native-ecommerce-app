@@ -28,7 +28,7 @@ const Rating = ({
         }
         type="font-awesome"
         color={color ? color : theme.colors.warning}
-        size={size}
+        size={20}
         onPress={readonly ? null : () => onStartRating(i)}
         containerStyle={
           i < count && {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
 Rating.defaultProps = {
   startingValue: 1,
   count: 5,
-  size: 12,
+  size: 15,
   pad: 4,
   readonly: false,
   onStartRating: () => {},

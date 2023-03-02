@@ -38,11 +38,7 @@ class Sidebar extends React.Component {
           screen: homeTabs.home_drawer,
         },
       },
-      {
-        id: '2',
-        name: t('common:text_blogs'),
-        router: mainStack.blogs,
-      },
+
       {
         id: '3',
         name: t('common:text_about'),
