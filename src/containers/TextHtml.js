@@ -21,10 +21,12 @@ const TextHtml = ({value, theme, style, ...rest}) => {
 };
 
 const styles = theme => ({
+
   div: {
+
     ...fonts.regular,
     fontSize: sizes.base,
-    // lineHeight: lineHeights.base,
+     lineHeight: 90,
     color: theme.colors.primary,
     textAlign: 'left',
   },
@@ -55,6 +57,7 @@ const styles = theme => ({
   strong: {
     ...fonts.bold,
   },
+
 });
 
 TextHtml.defaultProps = {
