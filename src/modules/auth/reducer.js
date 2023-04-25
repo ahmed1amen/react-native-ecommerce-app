@@ -33,6 +33,7 @@ const initState = fromJS({
   pendingChangePassword: false,
   pendingForgotPassword: false,
   pendingUpdateCustomer: false,
+  pendingDeleteAccount: false,
   pendingGetCustomer: false,
   files: {
     data: [],
@@ -137,7 +138,12 @@ export default function authReducer(state = initState, action = {}) {
     case Actions.UPDATE_CUSTOMER:
       return state.set('pendingUpdateCustomer', true);
 
-    case Actions.UPDATE_CUSTOMER_SUCCESS:
+   case Actions.DELETE_ACCOUNT:
+      return state.set('pendingDeleteAccount', true);
+
+    case Actions.DELETE_ACCOUNT_SUCCESS:
+      return state.set('pendingDeleteAccount', false);
+
     case Actions.UPDATE_CUSTOMER_ERROR:
       return state.set('pendingUpdateCustomer', false);
     case Actions.UPDATE_USER_SUCCESS:

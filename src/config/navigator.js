@@ -58,6 +58,7 @@ export const mainStack = {
   order_detail: 'OrderDetail',
   demo_config: 'DemoConfigScreen',
   edit_account: 'EditAccountScreen',
+  delete_account: 'DeleteAccountScreen',
   downloads: 'DownloadsScreen',
   page: 'PageScreen',
 };

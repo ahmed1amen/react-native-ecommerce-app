@@ -45,6 +45,7 @@ import DemoConfig from 'src/screens/profile/demo-config';
 import EditAccount from 'src/screens/profile/edit-account';
 import Downloads from 'src/screens/profile/downloads';
 import Page from 'src/screens/profile/Page';
+import DeleteAccount from "../screens/profile/delete-account";
 
 const Stack = createStackNavigator();
 
@@ -217,6 +218,11 @@ function MainStack() {
         options={{headerShown: false}}
         name={mainStack.edit_account}
         component={EditAccount}
+      />
+        <Stack.Screen
+        options={{headerShown: false}}
+        name={mainStack.delete_account}
+        component={DeleteAccount}
       />
       <Stack.Screen
         options={{headerShown: false}}

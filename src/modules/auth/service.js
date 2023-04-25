@@ -51,6 +51,7 @@ export const getCustomer = user_id =>
 
 export const logout = () => request.get(`/${PLUGIN_NAME}/v1/logout`);
 
+export const deleteAccount = (data) =>  request.post(`/${PLUGIN_NAME}/v1/delete-account`, data);
 export const isLogin = () => request.get(`/${PLUGIN_NAME}/v1/current`);
 
 export const checkPhoneNumber = data =>

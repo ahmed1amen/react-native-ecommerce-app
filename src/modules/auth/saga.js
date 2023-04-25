@@ -22,6 +22,7 @@ import {
   changePassword,
   forgotPassword,
   updateCustomer,
+  deleteAccount,
   getCustomer,
   getFilesDownload,
   loginWithApple,
@@ -43,6 +44,8 @@ import {languageSelector, requiredLoginSelector} from '../common/selectors';
 import NavigationService from 'src/utils/navigation';
 import {rootSwitch} from 'src/config/navigator';
 import {shippingAddressInit} from './config';
+import globalConfig from "../../utils/global";
+
 
 async function signOut() {
   const method = await AsyncStorage.getItem('method');
@@ -436,6 +439,7 @@ function* getCustomerSaga({payload}) {
  */
 function* updateCustomerSaga({payload}) {
   try {
+
     const {data, cb} = payload;
     const userID = yield select(userIdSelector);
     yield call(updateCustomer, userID, data);
@@ -447,9 +451,42 @@ function* updateCustomerSaga({payload}) {
       type: 'success',
     });
     yield call(cb);
+
   } catch (e) {
     yield put({
       type: Actions.UPDATE_CUSTOMER_ERROR,
+    });
+    yield call(showMessage, {
+      message: e.message,
+      type: 'danger',
+    });
+  }
+}
+
+
+/**
+ * Delete Account
+ * @returns {IterableIterator<*>}
+ */
+function* deleteAccountSaga({payload}) {
+  try {
+
+    const {data, cb} = payload;
+    console.log(data);
+    yield call(deleteAccount, data);
+    yield put({
+      type: Actions.DELETE_ACCOUNT_SUCCESS,
+    });
+    yield call(showMessage, {
+      message: 'success',
+      type: 'success',
+    });
+    yield call(cb);
+
+  } catch (e) {
+    console.log(e);
+    yield put({
+      type: Actions.DELETE_ACCOUNT_SUCCESS,
     });
     yield call(showMessage, {
       message: e.message,
@@ -496,6 +533,7 @@ export default function* authSaga() {
   yield takeEvery(Actions.SIGN_IN_WITH_APPLE, signInWithAppleSaga);
   yield takeEvery(Actions.IS_LOGIN, checkAuthSideEffectSaga);
   yield takeEvery(Actions.SIGN_OUT, signOutSaga);
+  yield takeEvery(Actions.DELETE_ACCOUNT, deleteAccountSaga);
   yield takeEvery(Actions.CHANGE_EMAIL, changeEmailSaga);
   yield takeEvery(Actions.CHANGE_PASSWORD, changePasswordSaga);
   yield takeEvery(Actions.FORGOT_PASSWORD, forgotPasswordSideEffect);

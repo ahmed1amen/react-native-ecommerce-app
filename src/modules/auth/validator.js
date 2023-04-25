@@ -149,6 +149,28 @@ export function validatorChangePassword(data, language) {
   return errors;
 }
 
+
+
+export function validatorDeleteAccount(data, language) {
+  let errors = Map();
+  const t = languages[language] ? languages[language] : languages.en;
+  const validators = t.validators || {};
+
+  if (
+      !data ||
+      !data.password ||
+      !isLength(data.password, {min: 1})
+  ) {
+    errors = errors.set('password', validators.text_password);
+  }
+
+
+  return errors;
+}
+
+
+
+
 export function validatorUpdateAccount(data, language) {
   let errors = Map();
   const t = languages[language] ? languages[language] : languages.en;

@@ -192,6 +192,30 @@ export function changePassword(data) {
   };
 }
 
+export function deleteAccount(data, cb = () => {}) {
+  return {
+    type: Actions.DELETE_ACCOUNT,
+    payload: {
+      data,
+      cb,
+    },
+  };
+}
+
+
+/**
+ * Update user
+ * @param data
+ * @returns {{type: string, payload: *}}
+ */
+export function deleteAccountSuccess(data) {
+  return {
+    type: Actions.DELETE_ACCOUNT_SUCCESS,
+    payload: data,
+  };
+}
+
+
 /**
  * Action sign out
  * @returns {{type: string}}
@@ -201,6 +225,7 @@ export function signOut() {
     type: Actions.SIGN_OUT,
   };
 }
+
 
 /**
  * SignIn with Apple
